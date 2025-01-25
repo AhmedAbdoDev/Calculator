@@ -44,7 +44,7 @@ To run this project locally, follow these steps:
 ---
 
 ## How to Use
-1. Enter numbers using the on-screen buttons.
+1. Enter numbers using the on-screen buttons **or your keyboard**.
 2. Click the desired operation (`+`, `-`, `×`, `÷`, `%`, `+/-`).
 3. Press `=` to see the result.
 4. Use the `C` button to clear all inputs and start a new calculation.
@@ -58,9 +58,9 @@ To run this project locally, follow these steps:
 ---
 
 ## **To-Do**
+- [x] Add keyboard support for input.
 - [ ] Add support for more complex mathematical functions (e.g., square root, power).
 - [ ] Implement a history feature to track past calculations.
-- [ ] Add keyboard support for input.
 
 ---
 
