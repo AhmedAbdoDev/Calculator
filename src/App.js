@@ -34,7 +34,7 @@ function App() {
       else if (key === "=" || key === "Enter") caluclator("=");
       else if (key === "Backspace") setResult(result.slice(0, -1));
       else if (key === "c" || key === "C") caluclator("C");
-      else if (key === "." && !result.includes(".")) caluclator(".");
+      else if (key === ".") caluclator(".");
     };
     window.addEventListener("keydown", handleKeyboard);
     return () => {
