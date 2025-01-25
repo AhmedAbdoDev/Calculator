@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 function App() {
   let [result, setResult] = useState("");
@@ -25,6 +25,22 @@ function App() {
       setResult(String(getResult() * -1));
     } else setResult(String(result + button));
   }
+  useEffect(() => {
+    const handleKeyboard = (event) => {
+      let { key } = event;
+      if (key >= "0" && key <= "9") caluclator(key);
+      else if (key === "+" || key === "-" || key === "*" || key === "/")
+        caluclator(key);
+      else if (key === "=" || key === "Enter") caluclator("=");
+      else if (key === "Backspace") setResult(result.slice(0, -1));
+      else if (key === "c" || key === "C") caluclator("C");
+      else if (key === "." && !result.includes(".")) caluclator(".");
+    };
+    window.addEventListener("keydown", handleKeyboard);
+    return () => {
+      window.removeEventListener("keydown", handleKeyboard);
+    };
+  });
   return (
     <div className="App">
       <div className="calculator">
@@ -45,7 +61,7 @@ function App() {
                       key={i}
                       onClick={() => caluclator(d)}
                     >
-                      <p className="">{d}</p>
+                      <p>{d}</p>
                     </div>
                   );
                 })}
