@@ -48,7 +48,12 @@ function App() {
           <h1>Calculator</h1>
         </div>
         <div className="result">
-          <input id="result" placeholder="0" value={result} readOnly />
+          <input
+            id="result"
+            placeholder="0"
+            value={result.replaceAll("*", "X")}
+            readOnly
+          />
         </div>
         <div className="lists">
           {buttons.map((c, i) => {
